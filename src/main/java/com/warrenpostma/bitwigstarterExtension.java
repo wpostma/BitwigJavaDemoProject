@@ -75,6 +75,10 @@ public class bitwigstarterExtension extends ControllerExtension
    /** Called when we receive sysex MIDI message on port 0. */
    private void onSysex0(final String data) 
    {
+      final String msgLog = String.format("SYSEX %s ",data );
+      ConsoleLogger.log(msgLog);
+
+
       // MMC Transport Controls:
       if (data.equals("f07f7f0605f7"))
             mTransport.rewind();
