@@ -6,11 +6,15 @@ import com.bitwig.extension.controller.AutoDetectionMidiPortNamesList;
 import com.bitwig.extension.controller.ControllerExtensionDefinition;
 import com.bitwig.extension.controller.api.ControllerHost;
 
-public class bitwigstarterExtensionDefinition extends ControllerExtensionDefinition
+// This defines the metadata that the plugin exports to the DAW host application.
+// The actual controller FooController has FooControllerDefinition
+// as its controller extension metadata class.
+
+public class BitwigStarterExtensionDefinition extends ControllerExtensionDefinition
 {
    private static final UUID DRIVER_ID = UUID.fromString("942bfb54-82e3-4604-9203-1210a50eee29");
    
-   public bitwigstarterExtensionDefinition()
+   public BitwigStarterExtensionDefinition()
    {
    }
 
@@ -92,8 +96,8 @@ public class bitwigstarterExtensionDefinition extends ControllerExtensionDefinit
    }
 
    @Override
-   public bitwigstarterExtension createInstance(final ControllerHost host)
+   public BitwigStarterExtension createInstance(final ControllerHost host)
    {
-      return new bitwigstarterExtension(this, host);
+      return new BitwigStarterExtension(this, host);
    }
 }
